@@ -9,7 +9,18 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.letuyen1277.Doctruyenchu1",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio",
+          "processing",
+          "fetch"
+        ],
+        "BGTaskSchedulerPermittedIdentifiers": [
+          "com.letuyen1277.Doctruyenchu.background-timer"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +30,11 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
     },
     "web": {
       "output": "static",
@@ -38,7 +53,29 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-sqlite",
+      "expo-audio",
+      [
+        "expo-media-control",
+        {
+          "audioSessionCategory": "playback"
+        }
+      ],
+      [
+        "@revopush/expo-code-push-plugin",
+        {
+          "ios": {
+            "CodePushDeploymentKey": "qlbGBdfxWEQF45Cjix8g5-Z-pG7eEJ_1MOcMXl",
+            "CodePushServerUrl": "https://api.revopush.org"
+          },
+          "android": {
+            "CodePushDeploymentKey": "qlbGBdfxWEQF45Cjix8g5-Z-pG7eEJ_1MOcMXl",
+            "CodePushServerUrl": "https://api.revopush.org"
+          }
+        }
+      ],
+      "expo-asset"
     ],
     "experiments": {
       "typedRoutes": true,
